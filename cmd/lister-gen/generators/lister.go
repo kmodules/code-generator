@@ -37,6 +37,7 @@ import (
 func NameSystems() namer.NameSystems {
 	pluralExceptions := map[string]string{
 		"Endpoints": "Endpoints",
+		"Elasticsearch": "Elasticsearches",
 	}
 	return namer.NameSystems{
 		"public":             namer.NewPublicNamer(0),
