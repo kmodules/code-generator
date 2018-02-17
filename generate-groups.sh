@@ -46,7 +46,7 @@ APIS_PKG="$3"
 GROUPS_WITH_VERSIONS="$4"
 shift 4
 
-go install ./$(dirname "${0}")/cmd/{defaulter-gen,client-gen,lister-gen,informer-gen,deepcopy-gen}
+# go install ./$(dirname "${0}")/cmd/{defaulter-gen,client-gen,lister-gen,informer-gen,deepcopy-gen}
 function codegen::join() { local IFS="$1"; shift; echo "$*"; }
 
 # enumerate group versions
