@@ -61,7 +61,7 @@ func NewDefaults() (*args.GeneratorArgs, *CustomArgs) {
 		ClientsetAPIPath: "/apis",
 		ClientsetOnly:    false,
 		FakeClient:       true,
-		PluralExceptions: []string{"Endpoints:Endpoints"},
+		PluralExceptions: []string{"Endpoints:Endpoints", "SecurityContextConstraints:SecurityContextConstraints"},
 	}
 	genericArgs.CustomArgs = customArgs
 	genericArgs.InputDirs = DefaultInputDirs
