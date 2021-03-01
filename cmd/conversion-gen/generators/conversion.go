@@ -825,6 +825,11 @@ func (g *genConversion) doMap(inType, outType *types.Type, sw *generator.Snippet
 				sw.Do("newVal := new($.|raw$)\n", outType.Elem)
 				sw.Do("if err := "+nameTmpl+"(&val, newVal, s); err != nil {\n", argsFromType(inType.Elem, outType.Elem))
 			} else {
+				for key := range g.manualConversions {
+					fmt.Printf("********************** %s -> %s", key.inType.Elem.Name, key.outType.Elem.Name)
+				}
+				fmt.Printf("__________________________ %s -> %s", inType.Elem.Name, outType.Elem.Name)
+
 				args := argsFromType(inType.Elem, outType.Elem)
 				sw.Do("// FIXME: Provide conversion function to convert $.inType|raw$ to $.outType|raw$\n", args)
 				sw.Do("compileErrorOnMissingConversion()\n", nil)
