@@ -49,7 +49,9 @@ fi
 
 # smoke test
 echo "Smoke testing examples by compiling..."
-go build "./${SCRIPT_ROOT}/examples/crd/..."
-go build "./${SCRIPT_ROOT}/examples/apiserver/..."
-go build "./${SCRIPT_ROOT}/examples/MixedCase/..."
-go build "./${SCRIPT_ROOT}/examples/HyphenGroup/..."
+cd "${SCRIPT_ROOT}"/examples
+go build "./crd/..."
+go build "./apiserver/..."
+go build "./MixedCase/..."
+go build "./HyphenGroup/..."
+go build "./keyword/..."
