@@ -364,7 +364,11 @@ func Run(g *Generator) {
 func deps(c *generator.Context, pkgs []*protobufPackage) map[string][]string {
 	ret := map[string][]string{}
 	for _, p := range pkgs {
-		for _, d := range c.Universe[p.PackagePath].Imports {
+		x := c.Universe[p.PackagePath]
+		if x == nil {
+			continue
+		}
+		for _, d := range x.Imports {
 			ret[p.PackagePath] = append(ret[p.PackagePath], d.Path)
 		}
 	}
