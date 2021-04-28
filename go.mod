@@ -32,3 +32,5 @@ require (
 	k8s.io/kube-openapi v0.0.0-20210305001622-591a79e4bda7
 	sigs.k8s.io/structured-merge-diff/v4 v4.1.0 // indirect
 )
+
+replace k8s.io/gengo => github.com/kmodules/gengo v0.0.0-20210428002657-a8850da697c2
